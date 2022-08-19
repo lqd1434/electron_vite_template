@@ -1,0 +1,19 @@
+{
+  "name": "matex",
+  "version": "1.2.0",
+  "description": "Matex application",
+  "license": "MIT",
+  "homepage": ".",
+  "main": "./dist/main/main.cjs",
+  "author": "lqd1434",
+  "scripts": {
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "devDependencies": {
+    "electron": "20.0.0",
+    "electron-builder": "^23.3.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1"
+  }
+}

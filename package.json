@@ -1,0 +1,35 @@
+{
+  "name": "electron_vite_template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node ./scripts/watch.mjs",
+    "build": "cross-env NODE_ENV=production MODE=production node ./scripts/build.mjs",
+    "preview": "vite preview --config packages/renderer/vite.config.ts",
+    "postbuild": "npm run copy",
+    "copy": "node scripts/copyFile.js",
+    "prerelease": "cd release/app && yarn",
+    "release": "cross-env NODE_ENV=production USE_HARD_LINKS=false electron-builder build --config electron_builder.json5 --publish never"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.0.1",
+    "chalk": "^5.0.1",
+    "cross-env": "^7.0.3",
+    "electron": "20.0.0",
+    "electron-builder": "^23.3.3",
+    "electron-rebuild": "^3.2.9",
+    "jsonfile": "^6.1.0",
+    "ora": "^6.1.2",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4",
+    "vite": "^3.0.7"
+  }
+}
